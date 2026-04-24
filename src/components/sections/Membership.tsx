@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 
 const membershipPrices = [
-  { label: "Erwachsene", price: "39 EUR / Monat" },
-  { label: "Jugendliche", price: "29 EUR / Monat" },
+  { label: "Erwachsene", price: "35 EUR / Monat" },
+  { label: "Jugendliche", price: "25 EUR / Monat" },
 ];
 
 export default function Membership() {
   return (
-    <section id="membership" className="py-24 bg-background relative overflow-hidden">
+    <section id="membership" className="py-16 md:py-24 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/20 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -22,17 +22,17 @@ export default function Membership() {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 bg-brand-primary"></div>
-            <span className="text-brand-primary font-black text-[0.6rem] sm:text-xs tracking-[0.3em] uppercase">
-              Mitgliedschaft
+            <span className="text-brand-primary font-black text-xs sm:text-sm tracking-[0.2em] uppercase">
+              Sei dabei
             </span>
             <div className="h-px w-12 bg-brand-primary"></div>
           </div>
           <h2 className="text-xl sm:text-3xl lg:text-4xl font-black text-foreground uppercase tracking-tighter">
-            KLAR, FAIR, <span className="text-brand-primary">MONATLICH</span>
+            MITGLIEDSCHAFT <span className="text-brand-primary">IM VEREIN</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-6 lg:gap-8 items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -45,7 +45,7 @@ export default function Membership() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Teil in einer echten Vereinsgemeinschaft und echtes Mitspracherecht",
+                "Teil in einer echten Vereinsgemeinschaft mit echtem Mitspracherecht",
                 "Top Trainerteam mit langjähriger Erfahrung",
                 "Zugang zu allen Trainingseinheiten und zum Open Gym",
                 "Wettkampftraining wenn gewünscht",
@@ -83,11 +83,11 @@ export default function Membership() {
             {membershipPrices.map((plan) => (
               <div key={plan.label} className="border border-brand-primary/30 bg-background p-5 sm:p-6">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-brand-primary mb-2">{plan.label}</p>
-                <p className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">{plan.price}</p>
+                <p className="text-2xl sm:text-3xl font-black text-foreground tracking-tight whitespace-nowrap">{plan.price}</p>
               </div>
             ))}
 
-            <p className="text-xs sm:text-sm text-foreground! text-white/70 font-medium px-1">
+            <p className="text-xs sm:text-sm text-foreground! text-white/80 font-medium px-1">
               Zusätzlich fällt einmalig eine Aufnahmegebühr von 15 EUR an.
             </p>
           </motion.div>

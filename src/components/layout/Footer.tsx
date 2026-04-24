@@ -28,47 +28,47 @@ export default function Footer() {
                 </div>
               <div className="mt-1">
                 <h3 className="font-black text-foreground uppercase tracking-tight">PSV ESSEN</h3>
-                <p className="text-[10px] font-bold text-brand-primary tracking-widest uppercase">SPORTZENTRUM</p>
+                <p className="text-xs font-bold text-brand-primary tracking-widest uppercase">SPORTZENTRUM</p>
               </div>
             </div>
 
-            <p className="max-w-md text-foreground! text-white/70 text-xs sm:text-sm leading-relaxed font-medium">
+            <p className="max-w-md text-foreground! text-white/80 text-xs sm:text-sm leading-relaxed font-medium">
               Dein Polizeisportverein in Essen. Thaiboxing, MMA, Boxing und Functional Fitness für Kinder, Jugendliche und Erwachsene – seit 2018.
             </p>
 
             <div className="flex gap-4">
               {[
-                { icon: Facebook, href: "#", label: "Facebook" },
-                { icon: Instagram, href: "#", label: "Instagram" },
-                { icon: Twitter, href: "#", label: "Twitter" },
-                { icon: Youtube, href: "#", label: "YouTube" },
+                { icon: Facebook, href: "https://facebook.com/psvessen", label: "Facebook" },
+                { icon: Instagram, href: "https://instagram.com/psvessen", label: "Instagram" },
               ].map((social, index) => (
                 <a
                   title={social.label}
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center bg-white/10 border border-brand-primary/20 hover:bg-brand-primary hover:text-black hover:border-brand-primary transition-all duration-300"
                 >
-                  <social.icon size={18} />
+                  <social.icon size={20} />
                 </a>
               ))}
             </div>
           </div>
 
-          <div>
+          <div className="lg:col-start-4">
             <h4 className="text-brand-primary font-black text-xs tracking-[0.2em] uppercase mb-8">Quick Links</h4>
             <ul className="space-y-4">
               {[
                 { name: "Start", href: "/" },
-                { name: "Über uns", href: "#about" },
-                { name: "Trainingsplan", href: "#schedule" },
-                { name: "Mitgliedschaft", href: "#membership" },
-                { name: "Kontakt", href: "#contact" },
+                { name: "Über uns", href: "/#about" },
+                { name: "Trainingsplan", href: "/#schedule" },
+                { name: "Mitgliedschaft", href: "/#membership" },
+                { name: "Kontakt", href: "/#contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-white/60 hover:text-white font-medium text-xs sm:text-sm transition-colors"
+                    className="group flex items-center gap-2 text-white/80 hover:text-white font-medium text-sm transition-colors"
                   >
                     <span className="w-2 h-px bg-brand-primary opacity-50 group-hover:w-4 transition-all"></span>
                     {link.name}

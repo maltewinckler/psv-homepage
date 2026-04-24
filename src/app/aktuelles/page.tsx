@@ -3,6 +3,9 @@ import Link from "next/link";
 import { newsPosts } from "@/content/news";
 import type { BlogPost, BlogPostSection } from "@/content/blogPosts";
 
+// Force static generation - content is from static files
+export const dynamic = 'force-static';
+
 const POSTS_PER_PAGE = 10;
 
 type BlogPageProps = {
@@ -21,10 +24,10 @@ function formatDate(dateValue: string): string {
 
 function getPageHref(page: number): string {
   if (page <= 1) {
-    return "/blog";
+    return "/aktuelles";
   }
 
-  return `/blog?page=${page}`;
+  return `/aktuelles?page=${page}`;
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
@@ -44,7 +47,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     <div className="min-h-screen pt-24 lg:pt-32 pb-16">
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-[72ch] mx-auto">
-          <p className="text-brand-primary font-bold uppercase tracking-[0.25em] text-xs mb-4">Was gibts Neues?</p>
+          <p className="text-brand-primary font-bold uppercase tracking-[0.2em] text-sm md:text-base mb-4">Was gibts Neues?</p>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-4">Aktuelles aus der Abteilung</h1>
           <p className="text-sm md:text-base text-foreground/80 leading-7">
             Hier teilen wir Neuigkeiten rund um den Verein, Trainingsupdates und wichtige Informationen für Mitglieder und Interessierte.
@@ -56,9 +59,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             <article
               key={post.slug}
               id={post.slug}
-              className="max-w-3xl mx-auto border border-brand-primary/20 bg-background rounded-sm overflow-hidden shadow-sm"
+              className="max-w-4xl mx-auto border border-brand-primary/20 bg-background rounded-sm overflow-hidden shadow-sm"
             >
-              <div className="relative h-56 md:h-64 overflow-hidden max-w-[72ch] mx-auto mt-6 rounded-sm border border-brand-primary/20">
+              <div className="relative h-56 md:h-64 overflow-hidden w-full rounded-sm border border-brand-primary/20">
                 <Image
                   src={post.coverImage}
                   alt={post.coverImageAlt}
@@ -68,23 +71,23 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               </div>
 
               <div className="p-6 md:p-10">
-                <div className="max-w-[72ch] mx-auto space-y-5">
+                <div className="space-y-5">
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag: string) => (
                       <span
                         key={tag}
-                        className="bg-brand-primary/15 text-brand-primary px-3 py-1 text-[11px] font-bold uppercase tracking-wider"
+                        className="bg-brand-primary/15 text-brand-primary px-3 py-1 text-xs font-bold uppercase tracking-wide"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <h2 className="text-xl md:text-2xl font-black tracking-tight leading-tight">
+                  <h2 className="text-xl md:text-3xl font-black tracking-tight leading-tight">
                     {post.title}
                   </h2>
 
-                  <p className="text-sm text-foreground/70">
+                  <p className="text-sm md:text-base text-foreground/80">
                     {formatDate(post.publishedAt)} • {post.author} • {post.readingTime}
                   </p>
 
@@ -96,7 +99,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                   {post.sections.map((section: BlogPostSection, sectionIndex: number) => (
                     <section key={`${post.slug}-section-${sectionIndex}`} className="space-y-4">
                       {section.heading && (
-                        <h3 className="text-lg md:text-xl font-black tracking-tight">
+                        <h3 className="text-base md:text-lg font-black tracking-tight">
                           {section.heading}
                         </h3>
                       )}
@@ -104,14 +107,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                       {section.paragraphs.map((paragraph: string, paragraphIndex: number) => (
                         <p
                           key={`${post.slug}-paragraph-${sectionIndex}-${paragraphIndex}`}
-                          className="text-sm md:text-base leading-7 text-foreground/90"
+                          className="text-sm md:text-base leading-7 text-foreground/85"
                         >
                           {paragraph}
                         </p>
                       ))}
 
                       {section.bulletPoints && (
-                        <ul className="list-disc pl-6 space-y-2 text-sm md:text-base leading-7 text-foreground/90">
+                        <ul className="list-disc pl-6 space-y-2 text-sm md:text-base leading-7 text-foreground/85">
                           {section.bulletPoints.map((bulletPoint: string) => (
                             <li key={bulletPoint}>{bulletPoint}</li>
                           ))}
@@ -129,7 +132,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                             />
                           </div>
                           {section.image.caption && (
-                            <figcaption className="text-xs md:text-sm text-foreground/65">
+                            <figcaption className="text-xs md:text-sm text-foreground/70">
                               {section.image.caption}
                             </figcaption>
                           )}

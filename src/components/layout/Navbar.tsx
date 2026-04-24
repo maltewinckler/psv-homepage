@@ -19,7 +19,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const pathname = usePathname();
   const isHomePage = pathname === '/';
-  const isBlogPage = pathname.startsWith('/blog');
+  const isBlogPage = pathname.startsWith('/aktuelles');
 
   useEffect(() => {
     if (!isHomePage) {
@@ -83,7 +83,7 @@ export default function Navbar() {
                   />
                 <div className="flex flex-col leading-tight">
                   <span className="font-black text-base lg:text-lg tracking-tight text-white">PSV ESSEN</span>
-                  <span className="font-bold text-[0.6rem] lg:text-xs text-brand-primary tracking-[0.2em]">SPORTZENTRUM</span>
+                  <span className="font-bold text-xs lg:text-sm text-brand-primary tracking-[0.2em]">SPORTZENTRUM</span>
                 </div>
               </Link>
             </div>
@@ -105,7 +105,7 @@ export default function Navbar() {
               ))}
 
               <Link
-                href="/blog"
+                href="/aktuelles"
                 className={`font-semibold transition text-sm uppercase tracking-wider ${
                   isBlogPage
                     ? 'text-brand-primary'
@@ -153,25 +153,25 @@ export default function Navbar() {
         </div>
 
         <div className="flex flex-col px-4 py-6 space-y-6 overflow-y-auto">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`font-semibold transition text-sm md:text-base uppercase tracking-wider block ${
-                isHomePage && activeSection === link.id
-                  ? 'text-brand-primary'
-                  : 'text-white/90 hover:text-brand-primary'
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`font-semibold transition text-base uppercase tracking-wider block py-3 ${
+                    isHomePage && activeSection === link.id
+                      ? 'text-brand-primary'
+                      : 'text-white/90 hover:text-brand-primary'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
 
           <Link
-            href="/blog"
+            href="/aktuelles"
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`font-semibold transition text-sm md:text-base uppercase tracking-wider block ${
+            className={`font-semibold transition text-base uppercase tracking-wider block py-3 ${
               isBlogPage
                 ? 'text-brand-primary'
                 : 'text-white/90 hover:text-brand-primary'

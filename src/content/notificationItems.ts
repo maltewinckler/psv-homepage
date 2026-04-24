@@ -9,9 +9,9 @@ export interface NotificationItem {
 export const notificationItems: NotificationItem[] = [
   {
     id: "relocation",
-    title: "Wir ziehen um: Alle Details unter Aktuelles",
+    title: "Wir ziehen um: Alle Details unter 'Aktuelles'",
     icon: "🚀",
     badge: "Neu",
-    href: "/blog#wir-ziehen-um",
+    href: "/aktuelles#wir-ziehen-um",
   },
 ];

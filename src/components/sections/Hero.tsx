@@ -1,55 +1,13 @@
 "use client";
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
-interface AnimatedNumberProps {
-  end: number;
-  duration?: number;
-  suffix?: string;
-  padStart?: boolean;
-}
-
-const AnimatedNumber = ({
-  end,
-  duration = 2000,
-  suffix = "",
-  padStart = false
-}: AnimatedNumberProps) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let startTime: number | null = null;
-    let animationFrame: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(easeOut * end));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration]);
-
-  const formattedCount = padStart ? String(count).padStart(2, '0') : count;
-
-  return <>{formattedCount}{suffix}</>;
-};
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-20 scroll-mt-28 lg:scroll-mt-32"
+      className="relative min-h-screen flex items-center py-16 md:py-24 scroll-mt-28 lg:scroll-mt-32"
     >
 
       <div
@@ -67,7 +25,9 @@ export default function Hero() {
         >
           <div className="flex items-center gap-4 mb-8">
             <div className="h-0.5 w-12 bg-brand-primary"></div>
-            <span className="text-brand-primary font-bold text-[0.6rem] md:text-xs tracking-[0.3em] uppercase">Seit 1922 • Polizei-Sportverein Essen e.V.</span>
+            <span className="text-brand-primary font-bold text-xs md:text-sm tracking-[0.2em] uppercase">
+              Seit 1922 • Polizei-Sportverein Essen e.V.
+            </span>
           </div>
 
           <h1 className="text-xl md:text-3xl lg:text-4xl font-black text-white leading-[1.05] tracking-tighter mb-8">
@@ -77,27 +37,23 @@ export default function Hero() {
           </h1>
 
           <p className="text-sm md:text-base text-gray-300 max-w-xl mb-6 md:mb-12 leading-relaxed font-medium">
-            Willkommen im Sportzentrum des PSV Essen! Wir trainieren Kinder, Jugendliche und Erwachsene in einer familiären Atmosphäre. Thaiboxing, MMA, Boxing, Functional Fitness – für jeden die richtige Herausforderung.
+            Willkommen im Sportzentrum des PSV Essen!
+            Wir trainieren Kinder, Jugendliche und Erwachsene in einer familiären Atmosphäre.
+            Wir bieten Kampfsport, Fitness und Selbstverteidigung für jede und jeden.
           </p>
 
           <div className="flex flex-wrap gap-4 md:gap-12 mb-8 md:mb-16">
             <div>
-              <div className="text-xl md:text-3xl font-black text-brand-primary">
-                <AnimatedNumber end={8} suffix="+" duration={2000} />
-              </div>
-              <div className="text-[0.5rem] md:text-xs font-bold text-gray-500 tracking-widest uppercase mt-1">Jahre Erfahrung</div>
+              <div className="text-xl md:text-3xl font-black text-brand-primary">100+</div>
+              <div className="text-xs md:text-sm font-bold text-gray-400 tracking-wide uppercase mt-1">Jahre Tradition</div>
             </div>
             <div>
-              <div className="text-xl md:text-3xl font-black text-brand-primary">
-                <AnimatedNumber end={4} suffix="+" duration={2000} padStart={true} />
-              </div>
-              <div className="text-[0.5rem] md:text-xs font-bold text-gray-500 tracking-widest uppercase mt-1">Disziplinen</div>
+              <div className="text-xl md:text-3xl font-black text-brand-primary">6</div>
+              <div className="text-xs md:text-sm font-bold text-gray-400 tracking-wide uppercase mt-1">Disziplinen</div>
             </div>
             <div>
-              <div className="text-xl md:text-3xl font-black text-brand-primary">
-                ∞
-              </div>
-              <div className="text-[0.5rem] md:text-xs font-bold text-gray-500 tracking-widest uppercase mt-1">Begeisterung</div>
+              <div className="text-xl md:text-3xl font-black text-brand-primary">Jede*r</div>
+              <div className="text-xs md:text-sm font-bold text-gray-400 tracking-wide uppercase mt-1">willkommen</div>
             </div>
           </div>
 
@@ -107,7 +63,7 @@ export default function Hero() {
               href="#contact"
               className="bg-brand-primary text-black px-4 py-1 md:px-8 md:py-3 text-xs md:text-base font-black transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-4px_rgba(212,156,23,0.4)] text-center clip-path-polygon [clip-path:polygon(0_0,100%_0,90%_100%,0_100%)]"
             >
-              STARTE DEINE REISE
+              KOMM ZUM PROBETRAINING
             </Link>
             <Link
               href="#about"

@@ -1,5 +1,5 @@
 import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
+import AboutUs from "@/components/sections/AboutUs";
 import TrainingPlan from "@/components/sections/TrainingPlan";
 import Membership from "@/components/sections/Membership";
 import Contact from "@/components/sections/Contact";
@@ -14,7 +14,7 @@ export default function Home() {
         <NewsBanner items={notificationItems} />
       </div>
       <Hero />
-      <Services />
+      <AboutUs />
       <TrainingPlan />
       <Membership />
       <Contact />

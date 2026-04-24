@@ -5,7 +5,7 @@ import { weeklySchedule } from "@/content/weeklySchedule";
 
 export default function TrainingPlan() {
   return (
-    <section id="schedule" className="py-24 bg-background relative overflow-hidden">
+    <section id="schedule" className="py-16 md:py-24 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/20 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -18,7 +18,7 @@ export default function TrainingPlan() {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 bg-brand-primary"></div>
-            <span className="text-brand-primary font-black text-[0.6rem] sm:text-xs tracking-[0.3em] uppercase">
+            <span className="text-brand-primary font-black text-xs sm:text-sm tracking-[0.2em] uppercase">
               Wochenplan
             </span>
             <div className="h-px w-12 bg-brand-primary"></div>
@@ -28,7 +28,7 @@ export default function TrainingPlan() {
             UNSER <span className="text-brand-primary">TRAININGSPLAN</span>
           </h2>
 
-          <p className="text-foreground! text-white/70 text-sm sm:text-base font-medium leading-relaxed">
+          <p className="text-foreground! text-white/80 text-sm sm:text-base font-medium leading-relaxed">
             Hier findest du alle regelmaessigen Einheiten auf einen Blick. Probetraining ist jederzeit moeglich.
           </p>
         </motion.div>
@@ -43,7 +43,7 @@ export default function TrainingPlan() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white/5 border border-brand-primary/10 rounded-lg overflow-hidden"
             >
-              <div className="bg-brand-primary/10 px-4 py-3 border-b border-brand-primary/10">
+              <div className="bg-brand-primary/10 px-4 py-4 border-b border-brand-primary/10">
                 <h3 className="text-sm font-black text-foreground uppercase tracking-tight">
                   {daySchedule.day}
                 </h3>
@@ -52,9 +52,9 @@ export default function TrainingPlan() {
                 {daySchedule.sessions.map((session, sessionIndex) => (
                   <div
                     key={sessionIndex}
-                    className="px-4 py-3 hover:bg-white/5 transition-colors"
+                    className="px-4 py-4 hover:bg-white/5 transition-colors"
                   >
-                    <p className="text-[10px] font-black text-brand-primary uppercase tracking-widest mb-1">
+                    <p className="text-xs font-black text-brand-primary uppercase tracking-wide mb-1">
                       {session.time}
                     </p>
                     <p className="text-sm font-bold text-foreground leading-tight">

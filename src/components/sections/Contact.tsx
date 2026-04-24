@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const CONTACT_EMAIL = "info@psvessen-sportzentrum.de";
+const CONTACT_EMAIL = "info@psvessen.de";
 const WHATSAPP_PHONE = "+491234567890";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/20 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,14 +21,14 @@ export default function Contact() {
         >
           <div className="flex items-center justify-center gap-4">
             <div className="h-0.5 w-12 bg-brand-primary"></div>
-            <span className="text-brand-primary font-bold text-[0.6rem] md:text-xs tracking-[0.3em] uppercase">Kontakt</span>
+            <span className="text-brand-primary font-bold text-xs md:text-sm tracking-[0.2em] uppercase">Kontakt</span>
             <div className="h-0.5 w-12 bg-brand-primary"></div>
           </div>
           <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-foreground leading-none uppercase tracking-tighter">
             KOMM <span className="text-brand-primary">VORBEI!</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-foreground! text-white/70 text-sm md:text-base">
-            Jede und jeder kann bei uns in jede passende Klasse einsteigen. Eine kurze Nachricht mit E-Mail-Adresse oder Telefonnummer reicht voellig aus.
+          <p className="max-w-2xl mx-auto text-foreground! text-white/80 text-sm md:text-base">
+            Jede*r kann bei uns bei jedem Training vorbeikommen. Eine kurze Nachricht mit E-Mail-Adresse oder Telefonnummer reicht völlig aus.
           </p>
         </motion.div>
 
@@ -53,8 +53,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-black text-foreground uppercase tracking-tight">PSV ESSEN</h4>
-                  <p className="text-[10px] font-bold text-brand-primary tracking-widest uppercase">SPORTZENTRUM</p>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-1">Seit 2018</p>
+                  <p className="text-xs font-bold text-brand-primary tracking-widest uppercase">SPORTZENTRUM</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">Seit 2018</p>
                 </div>
               </div>
             </div>
@@ -64,10 +64,10 @@ export default function Contact() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
               </div>
               <div className="space-y-1">
-                <p className="text-[10px] font-black text-brand-primary uppercase tracking-widest">Adresse</p>
+                <p className="text-xs font-black text-brand-primary uppercase tracking-wide">Adresse</p>
                 <p className="text-xs sm:text-sm text-foreground leading-relaxed">
-                  XY Strasse<br />
-                  45127 Essen-Westviertel
+                  Schürmannstrasse 43A<br />
+                  45136 Essen
                 </p>
               </div>
             </div>
@@ -77,8 +77,8 @@ export default function Contact() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
               </div>
               <div className="space-y-1">
-                <p className="text-[10px] font-black text-brand-primary uppercase tracking-widest">E-Mail</p>
-                <p className="text-xs sm:text-sm text-foreground break-all">{CONTACT_EMAIL}</p>
+                <p className="text-xs font-black text-brand-primary uppercase tracking-wide">E-Mail</p>
+                <p className="text-xs sm:text-sm text-foreground break-words">{CONTACT_EMAIL}</p>
               </div>
             </div>
           </motion.div>
@@ -95,12 +95,13 @@ export default function Contact() {
               <h4 className="text-sm sm:text-xl font-black text-foreground uppercase tracking-tight">SO ERREICHST DU UNS</h4>
             </div>
 
-            <div className="space-y-4 text-sm md:text-base text-foreground! text-white/70 leading-relaxed font-medium">
+            <div className="space-y-4 text-sm md:text-base text-foreground! text-white/80 leading-relaxed font-medium">
               <p>
-                Schick uns einfach eine kurze Nachricht mit deinem Namen und einer Kontaktmoeglichkeit (E-Mail oder Telefonnummer). Wir melden uns schnell bei dir zur passenden Klasse.
+                Schick uns einfach eine kurze Nachricht mit deinem Namen (via E-Mail oder Telefon/WhatsApp) und
+                bei welchem Training du teilnehmen möchtest. Du kannst zu jedem Training kommen.
               </p>
               <p>
-                Kein langes Formular, keine sensiblen Pflichtangaben.
+                Zuschauer sind bei allen Erwachsenentrainings herzlich willkommen. Gastkämpfer*innen ebenfalls!
               </p>
             </div>
 
