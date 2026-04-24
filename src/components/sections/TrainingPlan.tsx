@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { weeklySchedule } from "@/content/weeklySchedule";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export default function TrainingPlan() {
   return (
@@ -9,29 +10,18 @@ export default function TrainingPlan() {
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/20 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12"
-        >
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-brand-primary"></div>
-            <span className="text-brand-primary font-black text-xs sm:text-sm tracking-[0.2em] uppercase">
-              Wochenplan
-            </span>
-            <div className="h-px w-12 bg-brand-primary"></div>
-          </div>
+        <SectionHeader
+          subtitle="Wochenplan"
+          title={
+            <>
+              UNSER <span className="text-brand-primary">TRAININGSPLAN</span>
+            </>
+          }
+        />
 
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-black text-foreground mb-6 uppercase tracking-tighter">
-            UNSER <span className="text-brand-primary">TRAININGSPLAN</span>
-          </h2>
-
-          <p className="text-foreground! text-white/80 text-sm sm:text-base font-medium leading-relaxed">
-            Hier findest du alle regelmaessigen Einheiten auf einen Blick. Probetraining ist jederzeit moeglich.
-          </p>
-        </motion.div>
+        <p className="text-foreground! text-white/80 text-sm sm:text-base font-medium leading-relaxed text-center max-w-3xl mx-auto -mt-8 mb-12">
+          Hier findest du alle regelmaessigen Einheiten auf einen Blick. Probetraining ist jederzeit moeglich.
+        </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {weeklySchedule.map((daySchedule, index) => (

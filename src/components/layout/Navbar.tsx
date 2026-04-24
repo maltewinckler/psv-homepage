@@ -56,7 +56,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 z-40 w-full bg-background/80 backdrop-blur-md transition-colors">
+      <nav className="fixed top-0 z-40 w-full bg-background/80 backdrop-blur-md transition-colors" role="navigation" aria-label="Hauptnavigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
 
@@ -66,10 +66,13 @@ export default function Navbar() {
               {/* Hamburger Button */}
               <button
                 title="Menü öffnen"
+                aria-label="Menü öffnen"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
                 className="lg:hidden text-foreground p-1"
                 onClick={() => setIsMobileMenuOpen(true)}
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6" aria-hidden="true" />
               </button>
 
                 <Link href="/" className="flex items-center gap-2">
@@ -136,19 +139,24 @@ export default function Navbar() {
       )}
 
       <div
+        id="mobile-menu"
         className={`fixed inset-y-0 left-0 z-50 w-[75vw] max-w-sm bg-background/40 shadow-2xl transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobiles Menü"
       >
 
         <div className="flex items-center justify-between h-20 px-4 border-b border-brand-primary/20">
           <span className="font-black text-lg tracking-tight text-white">MENÜ</span>
           <button
             title='Menü schließen'
+            aria-label="Menü schließen"
             className="text-white p-1"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <X className="w-7 h-7" />
+            <X className="w-7 h-7" aria-hidden="true" />
           </button>
         </div>
 

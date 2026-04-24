@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const CONTACT_EMAIL = "info@psvessen.de";
 const WHATSAPP_PHONE = "+491234567890";
@@ -12,25 +13,18 @@ export default function Contact() {
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/20 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10 space-y-4"
-        >
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-0.5 w-12 bg-brand-primary"></div>
-            <span className="text-brand-primary font-bold text-xs md:text-sm tracking-[0.2em] uppercase">Kontakt</span>
-            <div className="h-0.5 w-12 bg-brand-primary"></div>
-          </div>
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-foreground leading-none uppercase tracking-tighter">
-            KOMM <span className="text-brand-primary">VORBEI!</span>
-          </h2>
-          <p className="max-w-2xl mx-auto text-foreground! text-white/80 text-sm md:text-base">
-            Jede*r kann bei uns bei jedem Training vorbeikommen. Eine kurze Nachricht mit E-Mail-Adresse oder Telefonnummer reicht völlig aus.
-          </p>
-        </motion.div>
+        <SectionHeader
+          subtitle="Kontakt"
+          title={
+            <>
+              KOMM <span className="text-brand-primary">VORBEI!</span>
+            </>
+          }
+        />
+
+        <p className="max-w-2xl mx-auto text-foreground! text-white/80 text-sm md:text-base text-center -mt-8 mb-10">
+          Jede*r kann bei uns bei jedem Training vorbeikommen. Eine kurze Nachricht mit E-Mail-Adresse oder Telefonnummer reicht völlig aus.
+        </p>
 
         <div className="flex flex-col lg:flex-row gap-8">
           <motion.div
@@ -114,7 +108,7 @@ export default function Contact() {
               </a>
 
               <div className="bg-white/5 border border-brand-primary/20 py-3 px-5 text-center text-xs sm:text-sm font-medium text-foreground">
-                WhatsApp: <a href={`https://wa.me/${WHATSAPP_PHONE}`} target="_blank" rel="noreferrer" className="text-brand-primary hover:underline">+49 123 4567890</a>
+                WhatsApp: <a href={`https://wa.me/${WHATSAPP_PHONE}`} target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">+49 123 4567890</a>
               </div>
             </div>
           </motion.div>

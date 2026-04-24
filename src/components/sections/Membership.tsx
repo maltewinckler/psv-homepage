@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const membershipPrices = [
   { label: "Erwachsene", price: "35 EUR / Monat" },
@@ -13,24 +14,14 @@ export default function Membership() {
       <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-primary/20 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12"
-        >
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-brand-primary"></div>
-            <span className="text-brand-primary font-black text-xs sm:text-sm tracking-[0.2em] uppercase">
-              Sei dabei
-            </span>
-            <div className="h-px w-12 bg-brand-primary"></div>
-          </div>
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-black text-foreground uppercase tracking-tighter">
-            MITGLIEDSCHAFT <span className="text-brand-primary">IM VEREIN</span>
-          </h2>
-        </motion.div>
+        <SectionHeader
+          subtitle="Sei dabei"
+          title={
+            <>
+              MITGLIEDSCHAFT <span className="text-brand-primary">IM VEREIN</span>
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-6 lg:gap-8 items-start">
           <motion.div
