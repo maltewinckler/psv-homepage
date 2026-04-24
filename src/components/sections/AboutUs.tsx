@@ -56,7 +56,7 @@ export default function Services() {
             }
             {activeTab === "principles" &&
               "Ein Kampfsportverein ist anders als ein Fußballverein. Daher haben wir klare Spielregeln and die sich alle "
-              + "halten müsssen - ob Mitglied oder Gast."
+              + "halten müssen - ob Mitglied oder Gast."
             }
           </p>
         </motion.div>

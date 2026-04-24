@@ -50,7 +50,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           <p className="text-brand-primary font-bold uppercase tracking-[0.2em] text-sm md:text-base mb-4">Was gibts Neues?</p>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-4">Aktuelles aus der Abteilung</h1>
           <p className="text-sm md:text-base text-foreground/80 leading-7">
-            Hier teilen wir Neuigkeiten rund um den Verein, Trainingsupdates und wichtige Informationen für Mitglieder und Interessierte.
+            Hier teilen wir Neuigkeiten rund um die Abteilung und das Vereinsleben.
           </p>
         </div>
 
