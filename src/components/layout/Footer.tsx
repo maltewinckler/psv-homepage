@@ -20,7 +20,7 @@ export default function Footer() {
                 <div className="bg-white/10 p-2 border border-brand-primary/20 shadow-lg backdrop-blur-sm">
                   <Image
                     src="/psv-icon.png"
-                    alt="PSV Essen Sportzentrum"
+                    alt="PSV Essen Kampfsport"
                     width={50}
                     height={50}
                     className="w-10 h-10 object-contain"
@@ -28,12 +28,12 @@ export default function Footer() {
                 </div>
               <div className="mt-1">
                 <h3 className="font-black text-foreground uppercase tracking-tight">PSV ESSEN</h3>
-                <p className="text-xs font-bold text-brand-primary tracking-widest uppercase">SPORTZENTRUM</p>
+                <p className="text-xs font-bold text-brand-primary tracking-widest uppercase">KAMPFSPORT</p>
               </div>
             </div>
 
             <p className="max-w-md text-foreground! text-white/80 text-xs sm:text-sm leading-relaxed font-medium">
-              Dein Polizeisportverein in Essen. Thaiboxing, MMA, Boxing und Functional Fitness für Kinder, Jugendliche und Erwachsene – seit 2018.
+              Dein Polizeisportverein in Essen mit der Abteilung Muay Thai und Luta Livre.
             </p>
 
             <div className="flex gap-4">

@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-const CONTACT_EMAIL = "info@psvessen.de";
-const WHATSAPP_PHONE = "+491234567890";
+const CONTACT_EMAIL = "muaythai@psv-essen.de";
+const WHATSAPP_PHONE = "+49 15756779475";
 
 export default function Contact() {
   return (
@@ -39,7 +39,7 @@ export default function Contact() {
                 <div className="p-2 bg-brand-primary/20 text-brand-primary border border-brand-primary/30">
                   <Image
                     src="/psv-icon.png"
-                    alt="PSV Essen Sportzentrum"
+                    alt="PSV Essen Kampfsport"
                     width={20}
                     height={20}
                     className="w-5 h-5 object-contain"
@@ -47,7 +47,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-black text-foreground uppercase tracking-tight">PSV ESSEN</h4>
-                  <p className="text-xs font-bold text-brand-primary tracking-widest uppercase">SPORTZENTRUM</p>
+                  <p className="text-xs font-bold text-brand-primary tracking-widest uppercase">KAMPFSPORT</p>
                   <p className="text-xs sm:text-sm text-gray-400 mt-1">Seit 2018</p>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function Contact() {
               </a>
 
               <div className="bg-white/5 border border-brand-primary/20 py-3 px-5 text-center text-xs sm:text-sm font-medium text-foreground">
-                WhatsApp: <a href={`https://wa.me/${WHATSAPP_PHONE}`} target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">+49 123 4567890</a>
+                WhatsApp: <a href={`https://wa.me/${WHATSAPP_PHONE}`} target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">{WHATSAPP_PHONE}</a>
               </div>
             </div>
           </motion.div>

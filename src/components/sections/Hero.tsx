@@ -37,9 +37,9 @@ export default function Hero() {
           </h1>
 
           <p className="text-sm md:text-base text-gray-300 max-w-xl mb-6 md:mb-12 leading-relaxed font-medium">
-            Willkommen im Sportzentrum des PSV Essen!
+            Willkommen beim Kampfsport des PSV Essen!
             Wir trainieren Kinder, Jugendliche und Erwachsene in einer familiären Atmosphäre.
-            Wir bieten Kampfsport, Fitness und Selbstverteidigung für jede und jeden.
+            Wir bieten Kampfsport für alle Erfahrungsstufen an.
           </p>
 
           <div className="flex flex-wrap gap-4 md:gap-12 mb-8 md:mb-16">

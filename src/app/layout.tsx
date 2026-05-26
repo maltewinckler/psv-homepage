@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PSV Essen Sportzentrum | Polizeisportverein Essen",
-  description: "PSV Essen Sportzentrum - Polizeisportverein Essen. Martial Arts und Functional Fitness für die ganze Familie. Thaiboxing, MMA, Boxing, Functional Fitness.",
+  title: "PSV Essen Kampfsport | Polizeisportverein Essen",
+  description: "PSV Essen Kampfsport - Polizeisportverein Essen. Muay Thai und Luta Livre.",
   icons: {
     icon: "/psv-icon.png",
     apple: "/psv-icon.png",

@@ -39,8 +39,8 @@ export default function Membership() {
                 "Teil in einer echten Vereinsgemeinschaft mit echtem Mitspracherecht",
                 "Top Trainerteam mit langjähriger Erfahrung",
                 "Zugang zu allen Trainingseinheiten und zum Open Gym",
-                "Wettkampftraining wenn gewünscht",
-                "Keine versteckten Kosten, kein Upselling, regelmäßige Seminare inklusive",
+                "Keine versteckten Kosten und kein Upselling",
+                "Regemäßige gemeinsame Aktivitäten"
               ].map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <svg
@@ -79,7 +79,7 @@ export default function Membership() {
             ))}
 
             <p className="text-xs sm:text-sm text-foreground! text-white/80 font-medium px-1">
-              Zusätzlich fällt einmalig eine Aufnahmegebühr von 15 EUR an.
+              Zusätzlich fällt einmalig eine Aufnahmegebühr von 25 EUR an.
             </p>
           </motion.div>
         </div>

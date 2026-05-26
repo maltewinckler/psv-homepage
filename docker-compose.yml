@@ -1,6 +1,23 @@
 version: '3.8'
 
 services:
+  # Caddy Reverse Proxy
+  caddy:
+    image: caddy:2-alpine
+    container_name: psvessen-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+    networks:
+      - psvessen-network
+
   # Next.js Application
   app:
     build:
@@ -8,8 +25,8 @@ services:
       dockerfile: Dockerfile
     container_name: psvessen-app
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     environment:
       - NODE_ENV=production
     healthcheck:
@@ -18,3 +35,13 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    networks:
+      - psvessen-network
+
+networks:
+  psvessen-network:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

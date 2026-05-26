@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { name: 'Start', href: '/#top', id: 'home' },
-  { name: 'Über uns', href: '/#about', id: 'about' },
+  // { name: 'Über uns', href: '/#about', id: 'about' },
   { name: 'Trainingsplan', href: '/#schedule', id: 'schedule' },
   { name: 'Mitgliedschaft', href: '/#membership', id: 'membership' },
   { name: 'Kontakt', href: '/#contact', id: 'contact' },
@@ -78,7 +78,7 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center gap-2">
                   <Image
                     src="/psv-icon.png"
-                    alt="PSV Essen Sportzentrum Logo"
+                    alt="PSV Essen Kampfsport Logo"
                     width={40}
                     height={40}
                     className="h-8 lg:h-10 w-auto object-contain"
@@ -86,7 +86,7 @@ export default function Navbar() {
                   />
                 <div className="flex flex-col leading-tight">
                   <span className="font-black text-base lg:text-lg tracking-tight text-white">PSV ESSEN</span>
-                  <span className="font-bold text-xs lg:text-sm text-brand-primary tracking-[0.2em]">SPORTZENTRUM</span>
+                  <span className="font-bold text-xs lg:text-sm text-brand-primary tracking-[0.2em]">KAMPFSPORT</span>
                 </div>
               </Link>
             </div>

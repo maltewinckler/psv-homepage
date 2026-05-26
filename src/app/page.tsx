@@ -6,6 +6,8 @@ import Contact from "@/components/sections/Contact";
 import NewsBanner from "@/components/sections/NewsBanner";
 import { notificationItems } from "@/content/notificationItems";
 
+// <AboutUs /> is currently not used.
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -14,7 +16,6 @@ export default function Home() {
         <NewsBanner items={notificationItems} />
       </div>
       <Hero />
-      <AboutUs />
       <TrainingPlan />
       <Membership />
       <Contact />
