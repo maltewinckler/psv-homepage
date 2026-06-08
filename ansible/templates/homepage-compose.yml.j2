@@ -1,0 +1,13 @@
+services:
+  homepage:
+    image: {{ docker_image }}
+    container_name: {{ homepage_container_name }}
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - {{ network_name }}
+
+networks:
+  {{ network_name }}:
+    external: true

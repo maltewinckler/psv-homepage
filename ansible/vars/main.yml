@@ -1,0 +1,6 @@
+domain_name: "kampfsport-psvessen.de"
+docker_image: "docker.io/maltewin/kampfsport-psvessen:latest"
+deploy_path: "~/deploy"
+network_name: "psvessen-net"
+homepage_container_name: "homepage"
+caddy_container_name: "caddy"

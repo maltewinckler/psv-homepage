@@ -1,0 +1,96 @@
+---
+- name: Deploy Kampfsport PSV Essen Homepage
+  hosts: webserver
+  become: false
+  vars_files:
+    - vars/main.yml
+
+  tasks:
+    - name: Install required system packages
+      package:
+        name:
+          - ufw
+          - podman
+          - podman-compose
+        state: present
+      become: true
+
+    - name: Allow unprivileged ports
+      sysctl:
+        name: net.ipv4.ip_unprivileged_port_start
+        value: '80'
+        state: present
+        reload: yes
+      become: true
+
+    - name: Configure UFW firewall
+      community.general.ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop:
+        - '22'
+        - '80'
+        - '443'
+      become: true
+
+    - name: Enable UFW
+      community.general.ufw:
+        state: enabled
+        policy: deny
+      become: true
+
+    - name: Check if Podman network exists
+      shell: "podman network inspect {{ network_name }}"
+      register: network_check
+      failed_when: false
+      changed_when: false
+
+    - name: Create Podman network
+      command: "podman network create {{ network_name }}"
+      when: network_check.rc != 0
+
+    - name: Create deployment directory
+      file:
+        path: "{{ deploy_path }}"
+        state: directory
+        mode: '0755'
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+      become: true
+
+    - name: Deploy Caddy configuration
+      template:
+        src: templates/Caddyfile.j2
+        dest: "{{ deploy_path }}/Caddyfile"
+        mode: '0644'
+
+    - name: Deploy Caddy compose file
+      template:
+        src: templates/caddy-compose.yml.j2
+        dest: "{{ deploy_path }}/caddy-compose.yml"
+        mode: '0644'
+
+    - name: Deploy Homepage compose file
+      template:
+        src: templates/homepage-compose.yml.j2
+        dest: "{{ deploy_path }}/homepage-compose.yml"
+        mode: '0644'
+
+    - name: Start Homepage container
+      shell: "podman compose -f homepage-compose.yml up -d"
+      args:
+        chdir: "{{ deploy_path }}"
+
+    - name: Start Caddy container
+      shell: "podman compose -f caddy-compose.yml up -d"
+      args:
+        chdir: "{{ deploy_path }}"
+
+    - name: Verify containers are running
+      shell: "podman ps --filter 'name={{ item }}' --format '{% raw %}{{.Names}}{% endraw %}'"
+      loop:
+        - "{{ homepage_container_name }}"
+        - "{{ caddy_container_name }}"
+      register: container_status
+      failed_when: container_status.stdout == ""

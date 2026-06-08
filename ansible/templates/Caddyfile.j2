@@ -1,0 +1,24 @@
+{{ domain_name }} {
+    # Reverse proxy to Homepage app running on port 3000
+    reverse_proxy {{ homepage_container_name }}:3000
+
+    # Enable gzip compression
+    encode gzip
+
+    # Security headers
+    header {
+        # Remove Server header
+        -Server
+
+        # Content Security Policy
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self';"
+
+        # Permissions Policy
+        Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    }
+
+    # Logging to stdout/stderr for Podman logs
+    log {
+        format json
+    }
+}
