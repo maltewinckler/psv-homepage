@@ -3,6 +3,8 @@ const nextConfig = {
   // Disable Next.js telemetry
   telemetry: false,
 
+  output: 'standalone',
+
   // Security headers
   headers: async () => [
     {
