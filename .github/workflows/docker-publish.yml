@@ -1,9 +1,8 @@
 name: Docker Publish
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   build-and-push:
@@ -28,4 +27,4 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/kampfsport-psvessen:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/kampfsport-psvessen:sha-${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/kampfsport-psvessen:${{ github.ref_name }}
