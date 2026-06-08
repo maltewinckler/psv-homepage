@@ -20,7 +20,7 @@ export default function TrainingPlan() {
         />
 
         <p className="text-foreground! text-white/80 text-sm sm:text-base font-medium leading-relaxed text-center max-w-3xl mx-auto -mt-8 mb-12">
-          Hier findest du alle regelmaessigen Einheiten auf einen Blick. Probetraining ist jederzeit moeglich.
+          Hier findest du alle regelmäßigen Einheiten auf einen Blick. Probetraining ist jederzeit möglich.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

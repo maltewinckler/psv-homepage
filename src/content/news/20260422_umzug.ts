@@ -9,7 +9,7 @@ export const blogPost: BlogPost = {
   publishedAt: "2026-04-22",
   author: "Team PSV Essen",
   readingTime: "5 Min.",
-  coverImage: "/moderner_kampfsport_halle_zentrum02.jpg",
+  coverImage: "/images/moderner_kampfsport_halle_zentrum02.jpg",
   coverImageAlt: "Trainingsflaeche in einer modernen Kampfsporthalle",
   tags: ["Verein", "Umzug", "Update"],
   sections: [

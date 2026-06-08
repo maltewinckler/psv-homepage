@@ -33,13 +33,12 @@ export default function Footer() {
             </div>
 
             <p className="max-w-md text-foreground! text-white/80 text-xs sm:text-sm leading-relaxed font-medium">
-              Dein Polizeisportverein in Essen mit der Abteilung Muay Thai und Luta Livre.
+              Dein Polizeisportverein in Essen: Abteilung Muay Thai und Luta Livre.
             </p>
 
             <div className="flex gap-4">
               {[
-                { icon: Facebook, href: "https://facebook.com/psvessen", label: "Facebook" },
-                { icon: Instagram, href: "https://instagram.com/psvessen", label: "Instagram" },
+                { icon: Instagram, href: "https://instagram.com/kampfsportpsvessen", label: "Instagram" },
               ].map((social, index) => (
                 <a
                   title={social.label}
