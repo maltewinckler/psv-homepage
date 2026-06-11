@@ -77,8 +77,18 @@
         dest: "{{ deploy_path }}/homepage-compose.yml"
         mode: '0644'
 
+    - name: Pull latest Homepage image
+      shell: "podman pull {{ docker_image }}"
+      args:
+        chdir: "{{ deploy_path }}"
+
     - name: Start Homepage container
       shell: "podman compose -f homepage-compose.yml up -d"
+      args:
+        chdir: "{{ deploy_path }}"
+
+    - name: Pull latest Caddy image
+      shell: "podman pull docker.io/library/caddy:2-alpine"
       args:
         chdir: "{{ deploy_path }}"
 

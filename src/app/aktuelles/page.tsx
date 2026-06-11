@@ -68,6 +68,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
 
@@ -131,6 +132,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                               fill
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               className="object-cover"
+                              loading="eager"
                             />
                           </div>
                           {section.image.caption && (
