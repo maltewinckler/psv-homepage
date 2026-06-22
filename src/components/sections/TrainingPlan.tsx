@@ -14,13 +14,13 @@ export default function TrainingPlan() {
           subtitle="Wochenplan"
           title={
             <>
-              UNSER <span className="text-brand-primary">TRAININGSPLAN</span>
+              ÜBERGANGS-<span className="text-brand-primary">TRAININGSPLAN</span>
             </>
           }
         />
 
         <p className="text-foreground! text-white/80 text-sm sm:text-base font-medium leading-relaxed text-center max-w-3xl mx-auto -mt-8 mb-12">
-          Hier findest du alle regelmäßigen Einheiten auf einen Blick. Probetraining ist jederzeit möglich.
+          Hier findest du unseren Trainingplan in der Übergangsphase (gültig ab dem 07.07.2026). {/* Hier findest du alle regelmäßigen Einheiten auf einen Blick. Probetraining ist jederzeit möglich. */}
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

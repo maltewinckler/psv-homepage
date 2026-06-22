@@ -102,14 +102,30 @@ export default function Contact() {
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={`mailto:${CONTACT_EMAIL}?subject=Probetraining%20PSV%20Essen&body=Hallo%20Team%2C%0Aich%20moechte%20gerne%20an%20einem%20Probetraining%20teilnehmen.%0AName%3A%0AKontakt%20(E-Mail%20oder%20Telefon)%3A`}
-                className="bg-brand-primary text-black font-black py-3 px-5 hover:bg-brand-primary/90 transition shadow-xl text-center uppercase tracking-widest text-xs sm:text-sm"
+                className="bg-brand-primary text-black font-black py-3 px-5 border border-brand-primary hover:bg-brand-primary/90 transition shadow-xl text-center uppercase tracking-widest text-xs sm:text-sm flex items-center justify-center flex-1 whitespace-nowrap"
               >
-                Nachricht per E-Mail
+                Nachricht per Mail
               </a>
 
-              <div className="bg-white/5 border border-brand-primary/20 py-3 px-5 text-center text-xs sm:text-sm font-medium text-foreground">
-                WhatsApp: <a href={`https://wa.me/${WHATSAPP_PHONE}`} target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">{WHATSAPP_PHONE}</a>
-              </div>
+              <a
+                href="https://psv-essen.de/aufnahme"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 text-brand-primary border border-brand-primary font-black py-3 px-5 hover:bg-brand-primary/10 transition shadow-xl text-center uppercase tracking-widest text-xs sm:text-sm flex items-center justify-center gap-2 flex-1 whitespace-nowrap"
+                title="Zum Anmeldeformular auf psv-essen.de (öffnet in neuem Tab)"
+              >
+                Mitglied werden
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+
+              <a
+                href={`https://wa.me/${WHATSAPP_PHONE.replace(/\\s/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 text-brand-primary border border-brand-primary font-black py-3 px-5 hover:bg-brand-primary/10 transition shadow-xl text-center uppercase tracking-widest text-xs sm:text-sm flex items-center justify-center flex-1 whitespace-nowrap"
+              >
+                WhatsApp: {WHATSAPP_PHONE}
+              </a>
             </div>
           </motion.div>
         </div>
