@@ -4,20 +4,32 @@ import { motion } from "framer-motion";
 import { weeklySchedule } from "@/content/TrainingPlan";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-const facilityMap: Record<string, { short: string; maps: string }> = {
+const facilityMap: Record<string, { short: string; full: string; address: string; maps: string }> = {
   "frida-levy-gesamtschule": {
     short: "Frida",
+    full: "Frida-Levy Gesamtschule",
+    address: "Varnhorststr. 2, 45127 Essen",
     maps: "https://maps.app.goo.gl/Q8cjiFHEUBn946PS8",
   },
   "burggymnasium": {
     short: "Burg",
+    full: "Burggymnasium",
+    address: "Burgplatz 4, 45127 Essen",
     maps: "https://maps.app.goo.gl/nHMQB1hbuPV6ymAz9",
   },
   "sporthalle-steeler-strasse": {
     short: "Steele",
+    full: "Sporthalle Steeler Str.",
+    address: "Steeler Str. 615, 45276 Essen",
     maps: "https://maps.app.goo.gl/oYKAiekVahjT35pJ7",
   },
 };
+
+const facilityOrder: string[] = [
+  "frida-levy-gesamtschule",
+  "burggymnasium",
+  "sporthalle-steeler-strasse",
+];
 
 const facilitiesInClarification: string[] = ["burggymnasium", "sporthalle-steeler-strasse"];
 
@@ -37,7 +49,7 @@ export default function TrainingPlan() {
         />
 
         <p className="text-foreground! text-white/80 text-sm sm:text-base font-medium leading-relaxed text-center max-w-3xl mx-auto -mt-8 mb-12">
-          Hier findest du unseren Trainingplan in der Übergangsphase (gültig ab dem 07.07.2026). {/* Hier findest du alle regelmäßigen Einheiten auf einen Blick. Probetraining ist jederzeit möglich. */}
+          Hier findest du unseren Trainingplan in der Übergangsphase (gültig ab dem 07.07.2026). Wir trainieren in verschiedenen öffentlichen Hallen. Wann wir wo trainieren, ist im Plan verlinkt. {/* Hier findest du alle regelmäßigen Einheiten auf einen Blick. Probetraining ist jederzeit möglich. */}
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -96,16 +108,17 @@ export default function TrainingPlan() {
 
         {/* Facility Footnote */}
         <div id="facilities" className="mt-12 pt-8 border-t border-brand-primary/10 scroll-mt-20">
-          <p className="text-xs text-white/50">
-            Frida-Levy Gesamtschule, Arnswaldter Str. 61, 45133 Essen ·{" "}
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-brand-primary/60 hover:text-brand-primary/80 transition-colors">Google Maps</a>
-            <br />
-            Burggymnasium, Kärgerstr. 14-16, 45127 Essen ·{" "}
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-brand-primary/60 hover:text-brand-primary/80 transition-colors">Google Maps</a>
-            <br />
-            Sporthalle Steeler Str., Steeler Str. 85, 45276 Essen ·{" "}
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-brand-primary/60 hover:text-brand-primary/80 transition-colors">Google Maps</a>
-          </p>
+          <div className="text-xs text-white/50 flex flex-col gap-1">
+            {facilityOrder.map((id) => {
+              const f = facilityMap[id];
+              return (
+                <div key={id}>
+                  {f.short}: {f.full}, {f.address} ·{" "}
+                  <a href={f.maps} target="_blank" rel="noopener noreferrer" className="text-brand-primary/60 hover:text-brand-primary/80 transition-colors">Google Maps</a>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

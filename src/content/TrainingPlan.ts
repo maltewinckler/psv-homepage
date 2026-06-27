@@ -28,7 +28,7 @@ export const weeklySchedule: DaySchedule[] = [
     day: "Mittwoch",
     facilityId: "burggymnasium",
     sessions: [
-      { time: "17:00 - 18:30", discipline: "Muay Thai" },
+      { time: "17:00 - 18:30", discipline: "Muay Thai (Fokus K1)" },
       { time: "18:30 - 20:00", discipline: "Bodenkampf" },
     ],
   },
