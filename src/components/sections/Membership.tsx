@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const membershipPrices = [
-  { label: "Erwachsene", price: "35 EUR / Monat" },
-  { label: "Jugendliche", price: "25 EUR / Monat" },
+  { label: "Erwachsene", price: "20 EUR / Monat" },
+  { label: "Jugendliche (14-18 Jahre)", price: "20 EUR / Monat" },
 ];
 
 export default function Membership() {
@@ -32,7 +32,7 @@ export default function Membership() {
             className="bg-white/5 border border-brand-primary/10 p-6 sm:p-8"
           >
             <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight mb-6 text-foreground">
-              Mitgliedschaft bei uns
+              Mitgliedschaft bei uns (ab 14 Jahren)
             </h3>
             <ul className="space-y-3">
               {[
