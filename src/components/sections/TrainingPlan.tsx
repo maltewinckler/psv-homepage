@@ -8,14 +8,14 @@ const facilityMap: Record<string, { short: string; full: string; address: string
   "frida-levy-gesamtschule": {
     short: "Frida",
     full: "Frida-Levy Gesamtschule",
-    address: "Varnhorststr. 2, 45127 Essen",
-    maps: "https://maps.app.goo.gl/Q8cjiFHEUBn946PS8",
+    address: "Klosterstraße 5 (Zugang über Hofterbergstr), 45127 Essen",
+    maps: "https://maps.app.goo.gl/ceAaaqk4hBx9BBVC7",
   },
   "burggymnasium": {
     short: "Burg",
     full: "Burggymnasium",
-    address: "Burgplatz 4, 45127 Essen",
-    maps: "https://maps.app.goo.gl/nHMQB1hbuPV6ymAz9",
+    address: "Ernst-Schmidt-Platz 2, 45127 Essen",
+    maps: "https://maps.app.goo.gl/F97t4mf4XLKNyvAp7",
   },
   "sporthalle-steeler-strasse": {
     short: "Steele",
@@ -31,7 +31,7 @@ const facilityOrder: string[] = [
   "sporthalle-steeler-strasse",
 ];
 
-const facilitiesInClarification: string[] = ["burggymnasium", "sporthalle-steeler-strasse"];
+const facilitiesInClarification: string[] = [];
 
 export default function TrainingPlan() {
   return (
@@ -49,7 +49,7 @@ export default function TrainingPlan() {
         />
 
         <p className="text-foreground! text-white/80 text-sm sm:text-base font-medium leading-relaxed text-center max-w-3xl mx-auto -mt-8 mb-12">
-          Hier findest du unseren Trainingplan in der Übergangsphase (gültig ab dem 07.07.2026). Wir trainieren in verschiedenen öffentlichen Hallen. Wann wir wo trainieren, ist im Plan verlinkt. {/* Hier findest du alle regelmäßigen Einheiten auf einen Blick. Probetraining ist jederzeit möglich. */}
+          Hier findest du unseren Trainingplan in der Übergangsphase. Wir trainieren in verschiedenen öffentlichen Hallen. Wann wir wo trainieren, ist im Plan verlinkt. {/* Hier findest du alle regelmäßigen Einheiten auf einen Blick. Probetraining ist jederzeit möglich. */}
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

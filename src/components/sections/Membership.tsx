@@ -40,7 +40,7 @@ export default function Membership() {
                 "Top Trainerteam mit langjähriger Erfahrung",
                 "Zugang zu allen Trainingseinheiten und zum Open Gym",
                 "Keine versteckten Kosten und kein Upselling",
-                "Regemäßige gemeinsame Aktivitäten"
+                "Regelmäßige gemeinsame Aktivitäten"
               ].map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <svg
