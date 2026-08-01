@@ -29,12 +29,12 @@ export const weeklySchedule: DaySchedule[] = [
     facilityId: "burggymnasium",
     sessions: [
       { time: "17:00 - 18:30", discipline: "K1 (ab dem 19.08.)" },
-      { time: "18:30 - 20:00", discipline: "Bodenkampf (ab dem 29.07.)" },
+      { time: "18:30 - 20:00", discipline: "Bodenkampf" },
     ],
   },
   {
     day: "Donnerstag",
-    facilityId: "sporthalle-steeler-strasse",
+    facilityId: "burggymnasium",
     sessions: [
       { time: "18:30 - 20:00", discipline: "Muay Thai" },
     ],
