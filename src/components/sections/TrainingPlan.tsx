@@ -37,7 +37,7 @@ export default function TrainingPlan() {
           subtitle="Wochenplan"
           title={
             <>
-              ÜBERGANGS-<span className="text-brand-primary">TRAININGSPLAN</span>
+              UNSER <span className="text-brand-primary">TRAININGSPLAN</span>
             </>
           }
         />
