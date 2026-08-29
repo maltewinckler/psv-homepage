@@ -13,7 +13,8 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <div id="top" />
       <div className="pt-16 lg:pt-20">
-        <NewsBanner items={notificationItems} />
+        {/* Hide until needed again */}
+        {/* <NewsBanner items={notificationItems} /> */}
       </div>
       <Hero />
       <TrainingPlan />

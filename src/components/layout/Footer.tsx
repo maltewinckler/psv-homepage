@@ -33,7 +33,7 @@ export default function Footer() {
             </div>
 
             <p className="max-w-md text-foreground! text-white/80 text-xs sm:text-sm leading-relaxed font-medium">
-              Dein Polizeisportverein in Essen: Abteilung Muay Thai und Luta Livre.
+              Dein Polizeisportverein in Essen: Abteilung Muay Thai.
             </p>
 
             <div className="flex gap-4">

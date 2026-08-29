@@ -17,18 +17,12 @@ const facilityMap: Record<string, { short: string; full: string; address: string
     address: "Ernst-Schmidt-Platz 2, 45127 Essen",
     maps: "https://maps.app.goo.gl/F97t4mf4XLKNyvAp7",
   },
-  "sporthalle-steeler-strasse": {
-    short: "Steele",
-    full: "Sporthalle Steeler Str.",
-    address: "Steeler Str. 615, 45276 Essen",
-    maps: "https://maps.app.goo.gl/oYKAiekVahjT35pJ7",
-  },
+
 };
 
 const facilityOrder: string[] = [
   "frida-levy-gesamtschule",
   "burggymnasium",
-  "sporthalle-steeler-strasse",
 ];
 
 const facilitiesInClarification: string[] = [];

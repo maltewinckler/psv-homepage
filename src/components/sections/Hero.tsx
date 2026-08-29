@@ -38,7 +38,7 @@ export default function Hero() {
 
           <p className="text-sm md:text-base text-gray-300 max-w-xl mb-6 md:mb-12 leading-relaxed font-medium">
             Willkommen beim Kampfsport des PSV Essen!
-            Wir trainieren Kinder, Jugendliche und Erwachsene in einer familiären Atmosphäre.
+            Bei uns können alle ab 14 Jahren in einer familiären Atmosphäre trainieren.
             Wir bieten Kampfsport für alle Erfahrungsstufen an.
           </p>
 
@@ -48,8 +48,8 @@ export default function Hero() {
               <div className="text-xs md:text-sm font-bold text-gray-400 tracking-wide uppercase mt-1">Jahre Tradition</div>
             </div>
             <div>
-              <div className="text-xl md:text-3xl font-black text-brand-primary">6</div>
-              <div className="text-xs md:text-sm font-bold text-gray-400 tracking-wide uppercase mt-1">Disziplinen</div>
+              <div className="text-xl md:text-3xl font-black text-brand-primary">20€</div>
+              <div className="text-xs md:text-sm font-bold text-gray-400 tracking-wide uppercase mt-1">Beitrag</div>
             </div>
             <div>
               <div className="text-xl md:text-3xl font-black text-brand-primary">Jede*r</div>
@@ -66,10 +66,13 @@ export default function Hero() {
               KOMM ZUM PROBETRAINING
             </Link>
             <Link
-              href="#about"
-              className="bg-transparent text-brand-primary border-2 border-brand-primary/30 px-4 py-1 md:px-8 md:py-3 text-xs md:text-base font-black transition-all hover:bg-brand-primary hover:text-black text-center"
+              href="https://psv-essen.de/aufnahme"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent text-brand-primary border-2 border-brand-primary/30 px-4 py-1 md:px-8 md:py-3 text-xs md:text-base font-black transition-all hover:bg-brand-primary hover:text-black text-center flex items-center justify-center gap-2"
             >
-              ERFAHRE MEHR
+              AUFNAHMEANTRAG
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </Link>
           </div>
         </motion.div>

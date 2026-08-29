@@ -59,9 +59,9 @@ export default function Contact() {
               </div>
               <div className="space-y-1">
                 <p className="text-xs font-black text-brand-primary uppercase tracking-wide">Adresse</p>
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed">
-                  Schürmannstrasse 43A<br />
-                  45136 Essen
+                <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                  Theodor-Althoff-Str. 4<br />
+                  45133 Essen
                 </p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Contact() {
               </div>
               <div className="space-y-1">
                 <p className="text-xs font-black text-brand-primary uppercase tracking-wide">E-Mail</p>
-                <p className="text-xs sm:text-sm text-foreground break-words">{CONTACT_EMAIL}</p>
+                <p className="text-xs sm:text-sm text-gray-400 mt-1">{CONTACT_EMAIL}</p>
               </div>
             </div>
           </motion.div>
@@ -95,7 +95,7 @@ export default function Contact() {
                 bei welchem Training du teilnehmen möchtest. Du kannst zu jedem Training kommen.
               </p>
               <p>
-                Zuschauer sind bei allen Erwachsenentrainings herzlich willkommen. Gastkämpfer*innen ebenfalls!
+                Für dein Probetraining brauchst du nur normale Sportkleidung. Weiteres Equipment kannst du dir ausleihen.
               </p>
             </div>
 
@@ -108,23 +108,12 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://psv-essen.de/aufnahme"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/5 text-brand-primary border border-brand-primary font-black py-3 px-5 hover:bg-brand-primary/10 transition shadow-xl text-center uppercase tracking-widest text-xs sm:text-sm flex items-center justify-center gap-2 flex-1 whitespace-nowrap"
-                title="Zum Anmeldeformular auf psv-essen.de (öffnet in neuem Tab)"
-              >
-                Mitglied werden
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-
-              <a
                 href={`https://wa.me/${WHATSAPP_PHONE.replace(/\\s/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 text-brand-primary border border-brand-primary font-black py-3 px-5 hover:bg-brand-primary/10 transition shadow-xl text-center uppercase tracking-widest text-xs sm:text-sm flex items-center justify-center flex-1 whitespace-nowrap"
               >
-                WhatsApp: {WHATSAPP_PHONE}
+                WA: +49 15756779475
               </a>
             </div>
           </motion.div>
