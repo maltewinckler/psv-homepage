@@ -8,10 +8,10 @@ export interface NotificationItem {
 
 export const notificationItems: NotificationItem[] = [
   {
-    id: "relocation",
-    title: "Wir ziehen um: Alle Details und Spendenaufruf unter 'Aktuelles'",
-    icon: "🚀",
-    badge: "Neu",
-    href: "/aktuelles#wir-ziehen-um",
+    id: "kickboxen-frauen",
+    title: "Immer montags: Neuer Kickbox-Kurs nur für Frauen",
+    icon: "🥊",
+    badge: "Infos",
+    href: "/aktuelles#kickboxen-fuer-frauen",
   },
 ];

@@ -59,18 +59,23 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             <article
               key={post.slug}
               id={post.slug}
-              className="max-w-4xl mx-auto border border-brand-primary/20 bg-background rounded-sm overflow-hidden shadow-sm"
+              className={post.coverImage
+                ? "max-w-4xl mx-auto border border-brand-primary/20 bg-background rounded-sm overflow-hidden shadow-sm"
+                : "max-w-4xl mx-auto border border-brand-primary/20 bg-background rounded-sm shadow-sm"
+              }
             >
-              <div className="relative h-56 md:h-64 overflow-hidden w-full rounded-sm border border-brand-primary/20">
-                <Image
-                  src={post.coverImage}
-                  alt={post.coverImageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
-              </div>
+              {post.coverImage && (
+                <div className="relative h-56 md:h-64 overflow-hidden w-full rounded-sm border border-brand-primary/20">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.coverImageAlt ?? ""}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              )}
 
               <div className="p-6 md:p-10">
                 <div className="space-y-5">
@@ -93,9 +98,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                     {formatDate(post.publishedAt)} • {post.author} • {post.readingTime}
                   </p>
 
-                  <p className="text-sm md:text-base text-foreground/85 leading-7">
-                    {post.excerpt}
-                  </p>
+                  {post.excerpt && (
+                    <p className="text-sm md:text-base text-foreground/85 leading-7">
+                      {post.excerpt}
+                    </p>
+                  )}
 
                   <div className="space-y-8 pt-2">
                   {post.sections.map((section: BlogPostSection, sectionIndex: number) => (
@@ -131,7 +138,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                               alt={section.image.alt}
                               fill
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              className="object-cover"
+                              className="object-contain"
                               loading="eager"
                             />
                           </div>

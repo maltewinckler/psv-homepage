@@ -12,12 +12,12 @@ export interface BlogPostSection {
 export interface BlogPost {
   slug: string;
   title: string;
-  excerpt: string;
+  excerpt?: string;
   publishedAt: string;
   author: string;
   readingTime: string;
-  coverImage: string;
-  coverImageAlt: string;
+  coverImage?: string;
+  coverImageAlt?: string;
   tags: string[];
   sections: BlogPostSection[];
 }
