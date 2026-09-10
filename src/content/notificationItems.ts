@@ -9,7 +9,7 @@ export interface NotificationItem {
 export const notificationItems: NotificationItem[] = [
   {
     id: "kickboxen-frauen",
-    title: "Immer montags: Neuer Kickbox-Kurs nur für Frauen",
+    title: "Immer montags: Neuer Kickboxing-Workout-Kurs nur für Frauen",
     icon: "🥊",
     badge: "Infos",
     href: "/aktuelles#kickboxen-fuer-frauen",

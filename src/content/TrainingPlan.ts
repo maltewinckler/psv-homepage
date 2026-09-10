@@ -14,7 +14,7 @@ export const weeklySchedule: DaySchedule[] = [
     day: "Montag",
     facilityId: "burggymnasium",
     sessions: [
-      { time: "17:30 - 18:45", discipline: "Kickboxen für Frauen" },
+      { time: "17:30 - 18:45", discipline: "Kickboxing-Workout für Frauen" },
     ],
   },
   {
